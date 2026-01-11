@@ -1,0 +1,21 @@
+<div id="cart"></div>
+
+<script src="js/data.js"></script>
+<script>
+let cartIds = JSON.parse(localStorage.getItem("cart")) || [];
+let total = 0;
+let html = "";
+
+cartIds.forEach(id=>{
+  let p = products.find(x=>x.id==id);
+  let gstAmt = p.price * p.gst / 100;
+  total += p.price + gstAmt;
+
+  html += `<p>${p.name} – ₹${p.price} + GST ₹${gstAmt}</p>`;
+});
+
+html += `<h3>Total: ₹${total}</h3>
+<a href="checkout.html">Proceed to Checkout</a>`;
+
+document.getElementById("cart").innerHTML = html;
+</script>

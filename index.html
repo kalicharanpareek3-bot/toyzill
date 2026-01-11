@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TOYZILL – Kids Toy Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS LINK (VERY IMPORTANT) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">TOYZILL</div>
+</div>
+
+<!-- SLIDER -->
+<div class="slider">
+  <div class="slide active">Best Toys for Kids 🎁</div>
+  <div class="slide">Cash on Delivery Available</div>
+  <div class="slide">Safe & Trusted Toys</div>
+</div>
+
+<!-- JS (SLIDER LOGIC) -->
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 3000);
+</script>
+
+</body>
+</html>
